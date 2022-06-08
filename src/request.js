@@ -273,11 +273,6 @@ export const getNodeRequestOptions = request => {
 		headers.set('Referer', request.referrer);
 	}
 
-	// HTTP-network-or-cache fetch step 2.11
-	if (!headers.has('User-Agent')) {
-		headers.set('User-Agent', 'node-fetch');
-	}
-
 	// HTTP-network-or-cache fetch step 2.15
 	if (request.compress && !headers.has('Accept-Encoding')) {
 		headers.set('Accept-Encoding', 'gzip, deflate, br');
